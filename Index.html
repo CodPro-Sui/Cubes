@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3d</title>
+  <!-- style -->
+  <style type="text/css" media="all">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #090F16;
+    }
+
+    .Design_page {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      transform-style: preserve-3d;
+    }
+
+    .first {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      transform-style: preserve-3d;
+      animation: ani 2s linear infinite;
+    }
+
+    @keyframes ani {
+      0% {
+        transform: rotateX(-30deg) rotateY(0deg);
+      }
+
+      100% {
+        transform: rotateX(-30deg) rotateY(360deg);
+      }
+    }
+
+    .part {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(#161B2D, #1C3B37, #359371);
+      list-style-type: none;
+      top: 0;
+      left: 0;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      transform: rotateY(calc(var(--i) * 90deg)) translateZ(50px) rotateX(30deg);
+      transform-origin: bottom;
+    }
+
+    .last {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      transform-style: preserve-3d;
+      animation: an 2s linear infinite;
+    }
+
+    @keyframes an {
+      0% {
+        transform: rotateX(-30deg) rotateY(0deg);
+      }
+
+      100% {
+        transform: rotateX(-30deg) rotateY(360deg);
+      }
+    }
+
+
+
+    .ss {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(#359371, #31BE8B, #24E39E, #0DFFA8);
+      list-style-type: none;
+      top: 100px;
+      left: 0;
+      transform: rotateY(calc(var(--j) * 90deg)) translateZ(50px);
+    }
+
+    .lavel {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #07FFA6;
+      box-shadow: 0 0 15px #07FFA6,
+        0 0 30px #07FFA6,
+        0 0 60px #07FFA6,
+        0 0 120px #07FFA6;
+      filter: blur(10px);
+      transform: rotateX(90deg) translateZ(-200px)
+    }
+
+    .Design_page:nth-child(1) {
+      bottom: 30%;
+    }
+
+    /* zoom 2 */
+    .Design_page:nth-child(2) {
+      top: 50px;
+      left: 15%;
+      zoom: .2;
+    }
+
+    .Design_page:nth-child(2) .first {
+      animation-direction: reverse;
+    }
+
+    .Design_page:nth-child(2) .last {
+      animation-direction: reverse;
+    }
+
+    .Design_page:nth-child(2) .part {
+      background: linear-gradient(#11160D, #6CD21B);
+    }
+
+    .Design_page:nth-child(2) .ss {
+      background: #6CD21B;
+    }
+
+    .Design_page:nth-child(2) .lavel {
+      background: #6CD21B;
+      box-shadow: 0 0 15px #6CD21B,
+        0 0 30px #6CD21B,
+        0 0 60px #6CD21B,
+        0 0 120px #6CD21B;
+    }
+
+
+
+
+
+    /* zoom 3 */
+    .Design_page:nth-child(3) {
+      top: 50px;
+      left: 35%;
+      zoom: .2;
+    }
+
+    .Design_page:nth-child(3) .first {
+      animation-direction: reverse;
+    }
+
+    .Design_page:nth-child(3) .last {
+      animation-direction: reverse;
+    }
+
+    .Design_page:nth-child(3) .part {
+      background: linear-gradient(#160D15, #CA20B7);
+    }
+
+    .Design_page:nth-child(3) .ss {
+      background: #CA20B7;
+    }
+
+    .Design_page:nth-child(3) .lavel {
+      background: #CA20B7;
+      box-shadow: 0 0 15px #CA20B7,
+        0 0 30px #CA20B7,
+        0 0 60px #CA20B7,
+        0 0 120px #CA20B7;
+    }
+
+
+
+
+
+
+
+    /* zoom 4 */
+    .Design_page:nth-child(4) {
+      top: 50px;
+      right: 15%;
+      zoom: .2;
+    }
+
+    .Design_page:nth-child(4) .first {
+      animation-direction: reverse;
+    }
+
+    .Design_page:nth-child(4) .last {
+      animation-direction: reverse;
+    }
+
+    .Design_page:nth-child(4) .part {
+      background: linear-gradient(#110D16, #661AC4);
+    }
+
+    .Design_page:nth-child(4) .ss {
+      background: #661AC4;
+    }
+
+    .Design_page:nth-child(4) .lavel {
+      background: #661AC4;
+      box-shadow: 0 0 15px #661AC4,
+        0 0 30px #661AC4,
+        0 0 60px #661AC4,
+        0 0 120px #661AC4;
+    }
+
+
+
+
+    /* zoom 5 */
+    .Design_page:nth-child(5) {
+      top: 50px;
+      right: 35%;
+      zoom: .2;
+    }
+
+    .Design_page:nth-child(5) .first {
+      animation-direction: reverse;
+    }
+
+    .Design_page:nth-child(5) .last {
+      animation-direction: reverse;
+    }
+
+    .Design_page:nth-child(5) .part {
+      background: linear-gradient(#16130D, #BD881E);
+    }
+
+    .Design_page:nth-child(5) .ss {
+      background: #BD881E;
+    }
+
+    .Design_page:nth-child(5) .lavel {
+      background: #BD881E;
+      box-shadow: 0 0 15px #BD881E,
+        0 0 30px #BD881E,
+        0 0 60px #BD881E,
+        0 0 120px #BD881E;
+    }
+
+
+
+
+    /* zoom 6*/
+    .Design_page:nth-child(6) {
+      top: 12%;
+      left: 40%;
+      zoom: .4;
+    }
+
+    .Design_page:nth-child(6) .first {}
+
+    .Design_page:nth-child(6) .last {}
+
+    .Design_page:nth-child(6) .part {
+      background: linear-gradient(#0D1611, #15CE67);
+    }
+
+    .Design_page:nth-child(6) .ss {
+      background: #15CE67;
+    }
+
+    .Design_page:nth-child(6) .lavel {
+      background: #15CE67;
+      box-shadow: 0 0 15px #15CE67,
+        0 0 30px #15CE67,
+        0 0 60px #15CE67,
+        0 0 120px #15CE67;
+    }
+
+
+
+
+    /* zoom 7 */
+    .Design_page:nth-child(7) {
+      top: 12%;
+      left: 70%;
+      zoom: .4;
+    }
+
+    .Design_page:nth-child(7) .first {}
+
+    .Design_page:nth-child(7) .last {}
+
+    .Design_page:nth-child(7) .part {
+      background: linear-gradient(#160D0D, #CA1B1B);
+    }
+
+    .Design_page:nth-child(7) .ss {
+      background: #CA1B1B;
+    }
+
+    .Design_page:nth-child(7) .lavel {
+      background: #CA1B1B;
+      box-shadow: 0 0 15px #CA1B1B,
+        0 0 30px #CA1B1B,
+        0 0 60px #CA1B1B,
+        0 0 120px #CA1B1B;
+    }
+
+
+
+    /* zoom 8 */
+    .Design_page:nth-child(8) {
+      top: 12%;
+      left: 100px;
+      zoom: .4;
+    }
+
+    .Design_page:nth-child(8) .first {}
+
+    .Design_page:nth-child(8) .last {}
+
+    .Design_page:nth-child(8) .part {
+      background: linear-gradient(#0D1416, #16A1C9);
+    }
+
+    .Design_page:nth-child(8) .ss {
+      background: #16A1C9;
+    }
+
+    .Design_page:nth-child(8) .lavel {
+      background: #16A1C9;
+      box-shadow: 0 0 15px #16A1C9,
+        0 0 30px #16A1C9,
+        0 0 60px #16A1C9,
+        0 0 120px #16A1C9;
+    }
+
+
+
+
+    /* zoom 9 */
+    .Design_page:nth-child(9) {
+      top: 33%;
+      left: 18%;
+      zoom: .64;
+    }
+
+    .Design_page:nth-child(9) .first {
+      animation-direction: reverse;
+    }
+
+    .Design_page:nth-child(9) .last {
+      animation-direction: reverse;
+    }
+
+    .Design_page:nth-child(9) .part {
+      background: linear-gradient(#160D13, #CC108D);
+    }
+
+    .Design_page:nth-child(9) .ss {
+      background: #CC108D;
+    }
+
+    .Design_page:nth-child(9) .lavel {
+      background: #CC108D;
+      box-shadow: 0 0 15px #CC108D,
+        0 0 30px #CC108D,
+        0 0 60px #CC108D,
+        0 0 120px #CC108D;
+    }
+
+
+
+
+    /* zoom 10*/
+    .Design_page:nth-child(10) {
+      top: 33%;
+      right: 18%;
+      zoom: .64;
+    }
+
+    .Design_page:nth-child(10) .first {
+      animation-direction: reverse;
+    }
+
+    .Design_page:nth-child(10) .last {
+      animation-direction: reverse;
+    }
+
+    .Design_page:nth-child(10) .part {
+      background: linear-gradient(#0D0D16, #1414FF);
+    }
+
+    .Design_page:nth-child(10) .ss {
+      background: #1414FF;
+    }
+
+    .Design_page:nth-child(10) .lavel {
+      background: #1414FF;
+      box-shadow: 0 0 15px #1414FF,
+        0 0 30px #1414FF,
+        0 0 60px #1414FF,
+        0 0 120px #1414FF;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- parent or origin -->
+  <div class="Design_page">
+    <div class="first">
+      <li class="part" style="--i:1;"></li>
+      <li class="part" style="--i:2;"></li>
+      <li class="part" style="--i:3;"></li>
+      <li class="part" style="--i:4;"></li>
+    </div>
+    <div class="last">
+      <li class="ss" style="--j:1;"></li>
+      <li class="ss" style="--j:2;"></li>
+      <li class="ss" style="--j:3;"></li>
+      <li class="ss" style="--j:4;"></li>
+      <div class="lavel"></div>
+    </div>
+  </div>
+  <!-- secound -->
+  <div class="Design_page">
+    <div class="first">
+      <li class="part" style="--i:1;"></li>
+      <li class="part" style="--i:2;"></li>
+      <li class="part" style="--i:3;"></li>
+      <li class="part" style="--i:4;"></li>
+    </div>
+    <div class="last">
+      <li class="ss" style="--j:1;"></li>
+      <li class="ss" style="--j:2;"></li>
+      <li class="ss" style="--j:3;"></li>
+      <li class="ss" style="--j:4;"></li>
+      <div class="lavel"></div>
+    </div>
+  </div>
+  <!-- third -->
+  <div class="Design_page">
+    <div class="first">
+      <li class="part" style="--i:1;"></li>
+      <li class="part" style="--i:2;"></li>
+      <li class="part" style="--i:3;"></li>
+      <li class="part" style="--i:4;"></li>
+    </div>
+    <div class="last">
+      <li class="ss" style="--j:1;"></li>
+      <li class="ss" style="--j:2;"></li>
+      <li class="ss" style="--j:3;"></li>
+      <li class="ss" style="--j:4;"></li>
+      <div class="lavel"></div>
+    </div>
+  </div>
+  <!-- fourth -->
+  <div class="Design_page">
+    <div class="first">
+      <li class="part" style="--i:1;"></li>
+      <li class="part" style="--i:2;"></li>
+      <li class="part" style="--i:3;"></li>
+      <li class="part" style="--i:4;"></li>
+    </div>
+    <div class="last">
+      <li class="ss" style="--j:1;"></li>
+      <li class="ss" style="--j:2;"></li>
+      <li class="ss" style="--j:3;"></li>
+      <li class="ss" style="--j:4;"></li>
+      <div class="lavel"></div>
+    </div>
+  </div>
+  <!-- fiveth -->
+  <div class="Design_page">
+    <div class="first">
+      <li class="part" style="--i:1;"></li>
+      <li class="part" style="--i:2;"></li>
+      <li class="part" style="--i:3;"></li>
+      <li class="part" style="--i:4;"></li>
+    </div>
+    <div class="last">
+      <li class="ss" style="--j:1;"></li>
+      <li class="ss" style="--j:2;"></li>
+      <li class="ss" style="--j:3;"></li>
+      <li class="ss" style="--j:4;"></li>
+      <div class="lavel"></div>
+    </div>
+  </div>
+  <!-- sixth -->
+  <div class="Design_page">
+    <div class="first">
+      <li class="part" style="--i:1;"></li>
+      <li class="part" style="--i:2;"></li>
+      <li class="part" style="--i:3;"></li>
+      <li class="part" style="--i:4;"></li>
+    </div>
+    <div class="last">
+      <li class="ss" style="--j:1;"></li>
+      <li class="ss" style="--j:2;"></li>
+      <li class="ss" style="--j:3;"></li>
+      <li class="ss" style="--j:4;"></li>
+      <div class="lavel"></div>
+    </div>
+  </div>
+  <!-- seventh -->
+  <div class="Design_page">
+    <div class="first">
+      <li class="part" style="--i:1;"></li>
+      <li class="part" style="--i:2;"></li>
+      <li class="part" style="--i:3;"></li>
+      <li class="part" style="--i:4;"></li>
+    </div>
+    <div class="last">
+      <li class="ss" style="--j:1;"></li>
+      <li class="ss" style="--j:2;"></li>
+      <li class="ss" style="--j:3;"></li>
+      <li class="ss" style="--j:4;"></li>
+      <div class="lavel"></div>
+    </div>
+  </div>
+  <!-- eighth -->
+  <div class="Design_page">
+    <div class="first">
+      <li class="part" style="--i:1;"></li>
+      <li class="part" style="--i:2;"></li>
+      <li class="part" style="--i:3;"></li>
+      <li class="part" style="--i:4;"></li>
+    </div>
+    <div class="last">
+      <li class="ss" style="--j:1;"></li>
+      <li class="ss" style="--j:2;"></li>
+      <li class="ss" style="--j:3;"></li>
+      <li class="ss" style="--j:4;"></li>
+      <div class="lavel"></div>
+    </div>
+  </div>
+  <!-- nineth -->
+  <div class="Design_page">
+    <div class="first">
+      <li class="part" style="--i:1;"></li>
+      <li class="part" style="--i:2;"></li>
+      <li class="part" style="--i:3;"></li>
+      <li class="part" style="--i:4;"></li>
+    </div>
+    <div class="last">
+      <li class="ss" style="--j:1;"></li>
+      <li class="ss" style="--j:2;"></li>
+      <li class="ss" style="--j:3;"></li>
+      <li class="ss" style="--j:4;"></li>
+      <div class="lavel"></div>
+    </div>
+  </div>
+  <!-- tenth -->
+  <div class="Design_page">
+    <div class="first">
+      <li class="part" style="--i:1;"></li>
+      <li class="part" style="--i:2;"></li>
+      <li class="part" style="--i:3;"></li>
+      <li class="part" style="--i:4;"></li>
+    </div>
+    <div class="last">
+      <li class="ss" style="--j:1;"></li>
+      <li class="ss" style="--j:2;"></li>
+      <li class="ss" style="--j:3;"></li>
+      <li class="ss" style="--j:4;"></li>
+      <div class="lavel"></div>
+    </div>
+  </div>
+</body>
+
+</html>
